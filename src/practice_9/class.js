@@ -11,9 +11,9 @@ class Class {
     assignLeader(student) {
         if (this.number === student.klass.number) {
             this.leader = student;
-            return '';
+        }else {
+            console.log('It is not one of us.');
         }
-        return 'It is not one of us.';
     }
 
     appendMember(student) {
