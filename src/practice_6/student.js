@@ -1,4 +1,4 @@
-import Person from "../../src/practice_5/person.js";
+import Person from "../../src/practice_6/person.js";
 
 class Student extends Person {
     constructor(name, age, klass) {
