@@ -3,6 +3,7 @@ import _ from "lodash";
 import chai from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
+
 const expect = chai.expect;
 chai.use(sinonChai);
 
@@ -53,7 +54,7 @@ describe("Person", () => {
                 klass.assignLeader(student);
                 const introduce = student.introduce();
 
-                expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");            
+                expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
             });
         });
     });
@@ -104,13 +105,13 @@ describe("Class", () => {
         let sandbox;
         let spy;
 
-        before(()=>{
+        before(() => {
             sandbox = sinon.sandbox.create();
             spy = sandbox.stub(console, 'log');
         });
 
         after(() => {
-          sandbox.restore();
+            sandbox.restore();
         });
 
 
@@ -120,7 +121,7 @@ describe("Class", () => {
 
             klass.assignLeader(student);
             expect(klass.leader).to.equal(student);
-         });
+        });
 
         it("should not assign student as Leader, given student is not class member", () => {
             const klass = new Class(2);
@@ -128,6 +129,8 @@ describe("Class", () => {
             const student = new Student(1, "Jerry", 21, otherKlass);
 
             klass.assignLeader(student);
+            console.log(klass.leader);
+            console.log(student);
 
             expect(klass.leader).not.equal(student);
         });
