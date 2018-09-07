@@ -11,14 +11,18 @@ class Class {
     assignLeader(student) {
         if (this.number === student.klass.number) {
             this.leader = student;
-            console.log(this.teacher !== undefined ? `I am ${this.teacher.name}. I know ${student.name} become Leader of Class ${this.number}.` : ``);
+            if (this.teacher) {
+                this.teacher.reactToAssign(student);
+            }
         }
         console.log('It is not one of us.');
     }
 
     appendMember(student) {
         student.klass = this;
-        console.log(this.teacher !== undefined ? `I am ${this.teacher.name}. I know ${student.name} has joined Class ${this.number}.` : ``);
+        if (this.teacher) {
+            this.teacher.reactToAppend(student);
+        }
     }
 
     isIn(student) {

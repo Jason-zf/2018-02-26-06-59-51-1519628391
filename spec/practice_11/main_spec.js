@@ -3,6 +3,7 @@ import _ from "lodash";
 import chai from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
+
 const expect = chai.expect;
 chai.use(sinonChai);
 
@@ -94,13 +95,13 @@ describe("Class", () => {
     let sandbox;
     let spy;
 
-    beforeEach(()=>{
+    beforeEach(() => {
         sandbox = sinon.sandbox.create();
         spy = sandbox.stub(console, 'log');
     });
 
     afterEach(() => {
-      sandbox.restore();
+        sandbox.restore();
     });
 
     it("should have class number", () => {
@@ -121,7 +122,7 @@ describe("Class", () => {
             klass.assignLeader(student);
 
             expect(klass.leader).to.equal(student);
-         });
+        });
 
         it("should not assign student as Leader, given student is not class member", () => {
             const klass = new Class(2);
