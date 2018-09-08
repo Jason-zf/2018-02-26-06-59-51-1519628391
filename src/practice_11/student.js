@@ -1,4 +1,3 @@
-
 import Person from "../../src/practice_11/person.js";
 
 class Student extends Person {
@@ -8,7 +7,11 @@ class Student extends Person {
     }
 
     introduce() {
-        return super.introduce() + ` I am a Student. I am ${this.klass.leader !== undefined && this.id === this.klass.leader.id ? `Leader of` : `at`} Class ${this.klass.number}.`;
+        return `${super.introduce()} ${this.studentDescription()}`;
+    }
+
+    studentDescription() {
+        return `I am a Student. I am ${this.klass.leader !== undefined && this.id === this.klass.leader.id ? `Leader of` : `at`} Class ${this.klass.number}.`;
     }
 }
 

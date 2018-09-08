@@ -7,7 +7,11 @@ class Teacher extends Person {
     }
 
     introduce() {
-        return `${super.introduce()} I am a Teacher. I teach ${this.klasses === undefined ? `No Class.` : `Class ${this.klasses.map(klass => klass.number).join(", ")}.`}`;
+        return `${super.introduce()} ${this.teachDescription()}`;
+    }
+
+    teachDescription() {
+        return `I am a Teacher. I teach ${this.klasses === undefined ? `No Class.` : `Class ${this.klasses.map(klass => klass.number).join(", ")}.`}`;
     }
 
     isTeaching(student) {

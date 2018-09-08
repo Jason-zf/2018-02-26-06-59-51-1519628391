@@ -1,4 +1,3 @@
-
 class Person {
     constructor(id, name, age) {
         this.id = id;
